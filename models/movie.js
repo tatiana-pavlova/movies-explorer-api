@@ -23,31 +23,31 @@ const movieSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: true, // добавить проверку url
+    required: true,
   },
   trailer: {
     type: String,
-    required: true, // добавить проверку url
+    required: true,
   },
   thumbnail: {
     type: String,
-    required: true, // добавить проверку url
+    required: true,
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user', // _id пользователя нужно
+    ref: 'user',
     required: true,
   },
   movieId: {
-    type: String, // уточнить тип moviesExplorer
+    type: Number,
     required: true,
   },
   nameRU: {
-    type: String, // мб проверка на кириллицу
+    type: String,
     required: true,
   },
   nameEN: {
-    type: String, // мб проверка на латиницу
+    type: String,
     required: true,
   },
 });
