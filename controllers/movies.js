@@ -9,7 +9,7 @@ module.exports.getMovies = (req, res, next) => {
       if (!movies) {
         throw new NotFoundError('Фильмы не найдены');
       }
-      return res.status(200).send(movies);
+      return res.send(movies);
     })
     .catch(next);
 };
@@ -42,7 +42,7 @@ module.exports.createMovie = (req, res, next) => {
     movieId,
     owner: req.user._id,
   })
-    .then((movie) => res.status(200).send(movie))
+    .then((movie) => res.send(movie))
     .catch(next);
 };
 

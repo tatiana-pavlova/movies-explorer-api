@@ -1,7 +1,7 @@
 {
   "name": "movies-explorer-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend for diploma project that allows register and authorize users, update user data and manage saved movies",
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint .",
@@ -35,6 +35,7 @@
     "express-winston": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.6",
+    "validator": "^13.7.0",
     "winston": "^3.4.0"
   }
 }
