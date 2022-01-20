@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
-const { MONGO_URL } = require('./config');
+// const { MONGO_URL } = require('./config');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const router = require('./routes/index');
 const NotFoundError = require('./errors/NotFoundError');
@@ -14,7 +14,7 @@ const app = express();
 
 app.use(cookieParser());
 
-mongoose.connect(MONGO_URL, {
+mongoose.connect('mongodb://localhost:27017/moviesdb', {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   autoIndex: true,
