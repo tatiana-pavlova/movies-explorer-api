@@ -31,11 +31,11 @@ app.use(auth);
 app.use(routerUser);
 app.use(routerMovie);
 
-app.use(errorLogger);
-
 app.use(() => {
   throw new NotFoundError('Страница не найдена');
 });
+
+app.use(errorLogger);
 
 app.use(errors());
 

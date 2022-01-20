@@ -20,12 +20,24 @@ module.exports.getUser = (req, res, next) => {
 
 module.exports.updateUser = (req, res, next) => {
   const { email, name } = req.body;
-  User.findByIdAndUpdate(req.user._id, { email, name }, { new: true, runValidators: true })
-    .then((user) => {
-      if (!user) {
-        throw new NotFoundError('Пользователь не найден');
+
+  User.findOne({ email })
+    .then((mail) => {
+      if (mail) {
+        throw new ConflictError('Данный email уже зарегистрирован');
+      } else {
+        return User.findByIdAndUpdate(
+          req.user._id,
+          { email, name },
+          { new: true, runValidators: true },
+        )
+          .then((user) => {
+            if (!user) {
+              throw new NotFoundError('Пользователь не найден');
+            }
+            return res.send(user);
+          });
       }
-      return res.status(200).send(user);
     })
     .catch(next);
 };
