@@ -15,7 +15,6 @@ const app = express();
 app.use(cookieParser());
 
 mongoose.connect('mongodb://localhost:27017/moviesdb', {
-  useUnifiedTopology: true,
   useNewUrlParser: true,
   autoIndex: true,
 });
