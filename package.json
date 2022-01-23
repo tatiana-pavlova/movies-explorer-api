@@ -1,0 +1,41 @@
+{
+  "name": "movies-explorer-api",
+  "version": "1.0.0",
+  "description": "backend for diploma project that allows register and authorize users, update user data and manage saved movies",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatiana-pavlova/movies-explorer-api.git"
+  },
+  "keywords": [],
+  "author": "Tatiana Pavlova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatiana-pavlova/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/tatiana-pavlova/movies-explorer-api#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.6",
+    "validator": "^13.7.0",
+    "winston": "^3.4.0"
+  }
+}
