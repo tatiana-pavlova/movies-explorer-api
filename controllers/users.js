@@ -75,5 +75,5 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.signout = (req, res) => {
-  res.clearCookie('jwt').send('jwt удален');
+  res.clearCookie('jwt').send({ message: 'jwt удален' });
 };

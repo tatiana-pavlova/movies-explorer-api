@@ -8,15 +8,42 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const router = require('./routes/index');
 const NotFoundError = require('./errors/NotFoundError');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 
 const app = express();
 
 app.use(cookieParser());
 
+const allowedCors = [
+  'http://movies-explorer.tp.nomoredomains.rocks',
+  'https://movies-explorer.tp.nomoredomains.rocks',
+  'http://localhost:3000',
+  'http://localhost:4000',
+];
+
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   autoIndex: true,
+});
+
+app.use((req, res, next) => {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', true);
+  }
+
+  const { method } = req;
+  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+  const requestHeaders = req.headers['access-control-request-headers'];
+
+  if (method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+    res.header('Access-Control-Allow-Headers', requestHeaders);
+    return res.end();
+  }
+
+  return next();
 });
 
 app.use(express.json());
