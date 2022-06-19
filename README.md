@@ -1,6 +1,14 @@
-# movies-explorer-api
-Бэкенд для дипломного приложения `Movies-Explorer`. API имеет следующие возможности: авторизация и регистрация пользователей, изменение данных пользователей и операции с сохраненными фильмами.
+# Movies Explorer (backend)
+Бэкенд для дипломного приложения `Movies-Explorer`. API имеет следующие возможности: авторизация и регистрация пользователей, проверка токена, изменение данных пользователей и операции с сохраненными фильмами.
 
-[Публичный IP-адрес](http://62.84.120.178/)  
+[Ссылка на frontend часть приложения](https://github.com/tatiana-pavlova/movies-explorer-frontend)
 
-[Ссылка на backend](http://api.movies-explorer.tp.nomoredomains.rocks/) 
+### Технологии, используемые в проекте:
+* Node.js
+* Express.js
+* MongoDB
+
+### Запуск проекта
+
+`npm run start` — запускает сервер   
+`npm run dev` — запускает сервер с hot-reload
