@@ -15,10 +15,7 @@ const app = express();
 app.use(cookieParser());
 
 const allowedCors = [
-  'http://movies-explorer.tp.nomoredomains.rocks',
-  'https://movies-explorer.tp.nomoredomains.rocks',
   'http://localhost:3000',
-  'http://localhost:4000',
 ];
 
 mongoose.connect(MONGO_URL, {
