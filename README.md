@@ -10,5 +10,21 @@
 
 ### Запуск проекта
 
-`npm run start` — запускает сервер   
-`npm run dev` — запускает сервер с hot-reload
+1. Установить [Node.js](https://nodejs.org/en/download/)
+2. Установить [Git](https://git-scm.com/downloads)
+3. Клонировать репозиторий с помощью командной строки
+   ```
+   git clone git@github.com:tatiana-pavlova/movies-explorer-api.git
+   ```
+4. Установить все зависимости с помощью командной строки
+   ```
+   npm install
+   ```
+5. Запустить приложение с hot-reload с помощью командной строки
+   ```
+   npm run dev
+   ```
+   Или запустить приложение в режиме production
+   ```
+   npm run start
+   ```
